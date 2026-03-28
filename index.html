@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matej Smutný</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: black;
       color: white;
     }
@@ -17,47 +19,67 @@
       position: fixed;
       width: 100%;
       top: 0;
+      left: 0;
       display: flex;
       justify-content: space-between;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 15px;
     }
 
     .lang {
       cursor: pointer;
-      margin-left: 10px;
-    }
-
-    section {
-      padding: 100px 20px;
-      max-width: 800px;
-      margin: auto;
+      opacity: 0.6;
     }
 
     .hero {
       height: 100vh;
+      background: url('images/hero.jpg') center/cover no-repeat;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
 
     h1 {
-      font-size: 60px;
+      font-size: 72px;
       margin: 0;
     }
 
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: 1px solid white;
-      text-decoration: none;
-      color: white;
+    section {
+      padding: 120px 40px;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .button:hover {
-      background: white;
-      color: black;
+    h2 {
+      margin-bottom: 30px;
+    }
+
+    .album {
+      margin-bottom: 60px;
+    }
+
+    .album-title {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .track {
+      opacity: 0.7;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+
+    .track:hover {
+      opacity: 1;
     }
 
     iframe {
@@ -66,6 +88,22 @@
       border: none;
       margin-top: 20px;
     }
+
+    a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+
+    p {
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+
   </style>
 </head>
 
@@ -73,88 +111,97 @@
 
 <header>
   <div>Matej Smutný</div>
-  <div>
-    <span class="lang" onclick="setLang('en')">EN</span>
-    <span class="lang" onclick="setLang('sk')">SK</span>
+  <div class="lang-switch">
+    <span class="lang">EN</span>
+    <span class="lang">SK</span>
   </div>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-  <h1 id="title">New Release</h1>
-  <a class="button" href="#" id="listenBtn" target="_blank">Listen</a>
+  <div>
+    <h1>Matej Smutný</h1>
+    <p>New music coming soon</p>
+  </div>
 </div>
 
 <!-- BIO -->
 <section>
-  <h2 id="bioTitle">Bio</h2>
-  <p id="bioText">
-    Slovak musician creating atmospheric and emotional music.
+  <h2>Bio</h2>
+  <p>
+    Matej Smutný is a Slovak singer songwriter and producer blending atmospheric pop with emotional storytelling. He began as a percussionist and composer and entered the scene as a solo artist in 2020 with his debut single Psycho Love which quickly gained international attention and reached MTV rotations across Europe. Since then he has released the EP Van Stories and his debut album Aura building a strong presence across Slovakia the Czech Republic and beyond. His music regularly appears on radio while his live shows range from intimate acoustic sets to full band performances across Europe including a sold out show in London. Currently based in Sweden Matej is working on new music and international projects while continuing to shape his sound and artistic identity.
   </p>
 </section>
 
 <!-- MUSIC -->
 <section>
-  <h2 id="musicTitle">Music</h2>
-  <iframe src="https://open.spotify.com/embed/artist/1u7kkVrr14iBvrpYnZILJR"></iframe>
+  <h2>Music</h2>
+  <iframe src="https://open.spotify.com/embed/artist/1joIZwZEKLuiS5SAwzOo9q"></iframe>
 </section>
 
-<!-- LYRICS -->
+<!-- DISCOGRAPHY -->
 <section>
-  <h2 id="lyricsTitle">Lyrics</h2>
-  <p>Coming soon...</p>
-</section>
 
-<!-- LIVE -->
-<section>
-  <h2 id="liveTitle">Live Shows</h2>
-  <p>No upcoming shows</p>
+  <h2>Discography</h2>
+
+  <!-- VAN STORIES -->
+  <div class="album">
+    <div class="album-title">Van Stories EP</div>
+
+    <div class="track" onclick="window.location.href='elixir.html'">1. Elixir</div>
+    <div class="track">2. Fairytale</div>
+    <div class="track">3. Psycho Love</div>
+    <div class="track">4. Kitchen Dance</div>
+  </div>
+
+  <!-- AURA -->
+  <div class="album">
+    <div class="album-title">Aura Album</div>
+
+    <div class="track">1. Fly No More</div>
+    <div class="track">2. Magentic Clouds</div>
+    <div class="track">3. In My Head</div>
+    <div class="track">4. Somebody</div>
+    <div class="track">5. Heal You Up</div>
+    <div class="track">6. Scrolling In The Night feat Milan Medek</div>
+    <div class="track">7. Words U Say</div>
+    <div class="track">8. By My Side feat Lara Koll</div>
+    <div class="track">9. Friends feat Jacob Critch</div>
+    <div class="track">10. Sister</div>
+    <div class="track">11. We Don't Cry</div>
+  </div>
+
+  <!-- SINGLES EN -->
+  <div class="album">
+    <div class="album-title">Singles EN</div>
+
+    <div class="track">Dance Dance</div>
+    <div class="track">We Go Wrong</div>
+    <div class="track">Dragonfly</div>
+    <div class="track">Bye Bye Arena</div>
+    <div class="track">Santa Claus</div>
+  </div>
+
+  <!-- SINGLES SK -->
+  <div class="album">
+    <div class="album-title">Singles SK</div>
+
+    <div class="track">Zázrak</div>
+    <div class="track">Daj mi ešte deň</div>
+    <div class="track">PIUKO</div>
+  </div>
+
 </section>
 
 <!-- SOCIALS -->
 <section>
-  <h2 id="socialTitle">Follow</h2>
+  <h2>Follow</h2>
   <p>
-    <a href="#">Instagram</a><br>
-    <a href="#">YouTube</a>
+    <a href="https://www.instagram.com/matej_smutnee/" target="_blank">Instagram</a><br>
+    <a href="https://www.tiktok.com/@matej_smutnee" target="_blank">TikTok</a><br>
+    <a href="https://open.spotify.com/artist/1joIZwZEKLuiS5SAwzOo9q" target="_blank">Spotify</a>
   </p>
 </section>
-
-<script>
-const content = {
-  en: {
-    title: "New Release",
-    listen: "Listen",
-    bioTitle: "Bio",
-    bio: "Slovak musician creating atmospheric and emotional music.",
-    music: "Music",
-    lyrics: "Lyrics",
-    live: "Live Shows",
-    social: "Follow"
-  },
-  sk: {
-    title: "Nový release",
-    listen: "Počúvaj",
-    bioTitle: "Bio",
-    bio: "Slovenský hudobník tvoriaci atmosférickú a emotívnu hudbu.",
-    music: "Hudba",
-    lyrics: "Texty",
-    live: "Koncerty",
-    social: "Sleduj"
-  }
-}
-
-function setLang(lang) {
-  document.getElementById("title").innerText = content[lang].title;
-  document.getElementById("listenBtn").innerText = content[lang].listen;
-  document.getElementById("bioTitle").innerText = content[lang].bioTitle;
-  document.getElementById("bioText").innerText = content[lang].bio;
-  document.getElementById("musicTitle").innerText = content[lang].music;
-  document.getElementById("lyricsTitle").innerText = content[lang].lyrics;
-  document.getElementById("liveTitle").innerText = content[lang].live;
-  document.getElementById("socialTitle").innerText = content[lang].social;
-}
-</script>
 
 </body>
 </html>
