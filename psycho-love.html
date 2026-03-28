@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psycho Love</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* BACK */
+.back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 14px;
+  opacity: 0.5;
+  text-decoration: none;
+  color: white;
+  z-index: 1000;
+}
+
+.back:hover {
+  opacity: 1;
+}
+
+/* SECTIONS */
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+/* TEXT STYLES */
+.big {
+  font-size: 64px;
+  font-weight: 600;
+}
+
+.medium {
+  font-size: 32px;
+  opacity: 0.85;
+}
+
+.small {
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+/* GLITCH */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  color: red;
+  transform: translate(-2px, -2px);
+  opacity: 0.4;
+}
+
+.glitch::after {
+  color: blue;
+  transform: translate(2px, 2px);
+  opacity: 0.4;
+}
+
+/* FADE */
+.fade {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* GLOW */
+.glow {
+  text-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back">back</a>
+
+<div class="section fade">
+  <div class="big glitch glow" data-text="Psycho Love">Psycho Love</div>
+</div>
+
+<div class="section">
+  <div class="medium">Our love it used to be so colorful</div>
+</div>
+
+<div class="section">
+  <div class="big">Now it's so black and white like a funeral</div>
+</div>
+
+<div class="section">
+  <div class="small">Now you got me tossing and turning in my sleep</div>
+</div>
+
+<div class="section">
+  <div class="medium">I can't get you out of my head I need relief</div>
+</div>
+
+<div class="section">
+  <div class="big glitch" data-text="I need you now">Cause I really need you now</div>
+</div>
+
+<div class="section">
+  <div class="medium">And I will walk the line for your</div>
+</div>
+
+<div class="section">
+  <div class="big glow">Love love was so amazing magical</div>
+</div>
+
+<div class="section">
+  <div class="big glitch" data-text="psychological">Your love is psychological</div>
+</div>
+
+<div class="section">
+  <div class="medium">Cause you make me feel complete</div>
+</div>
+
+<div class="section">
+  <div class="big">I'm falling for your love</div>
+</div>
+
+<div class="section">
+  <div class="medium">Baby I miss the way that you used to taste</div>
+</div>
+
+<div class="section">
+  <div class="small">Your lips were like a drug inside of me</div>
+</div>
+
+<div class="section">
+  <div class="medium">I'm tossing and turning can't get no sleep</div>
+</div>
+
+<div class="section">
+  <div class="big glitch">The one that got away</div>
+</div>
+
+<div class="section">
+  <div class="big glow">Falling for you falling for you</div>
+</div>
+
+<div class="section">
+  <div class="medium">Your love is psychological</div>
+</div>
+
+<div class="section">
+  <div class="big glitch glow" data-text="Love">Love</div>
+</div>
+
+</body>
+</html>
