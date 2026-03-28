@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,30 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Helvetica, Arial, sans-serif;
       background: black;
       color: white;
-      text-align: center;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .lang {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
     .hero {
@@ -27,10 +47,6 @@
       margin: 0;
     }
 
-    p {
-      opacity: 0.7;
-    }
-
     .button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -43,19 +59,102 @@
       background: white;
       color: black;
     }
+
+    iframe {
+      width: 100%;
+      height: 380px;
+      border: none;
+      margin-top: 20px;
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <h1>Matej Smutný</h1>
-    <p>New release out now</p>
-
-    <a class="button" href="https://open.spotify.com" target="_blank">
-      Listen on Spotify
-    </a>
+<header>
+  <div>Matej Smutný</div>
+  <div>
+    <span class="lang" onclick="setLang('en')">EN</span>
+    <span class="lang" onclick="setLang('sk')">SK</span>
   </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1 id="title">New Release</h1>
+  <a class="button" href="#" id="listenBtn" target="_blank">Listen</a>
+</div>
+
+<!-- BIO -->
+<section>
+  <h2 id="bioTitle">Bio</h2>
+  <p id="bioText">
+    Slovak musician creating atmospheric and emotional music.
+  </p>
+</section>
+
+<!-- MUSIC -->
+<section>
+  <h2 id="musicTitle">Music</h2>
+  <iframe src="https://open.spotify.com/embed/artist/1u7kkVrr14iBvrpYnZILJR"></iframe>
+</section>
+
+<!-- LYRICS -->
+<section>
+  <h2 id="lyricsTitle">Lyrics</h2>
+  <p>Coming soon...</p>
+</section>
+
+<!-- LIVE -->
+<section>
+  <h2 id="liveTitle">Live Shows</h2>
+  <p>No upcoming shows</p>
+</section>
+
+<!-- SOCIALS -->
+<section>
+  <h2 id="socialTitle">Follow</h2>
+  <p>
+    <a href="#">Instagram</a><br>
+    <a href="#">YouTube</a>
+  </p>
+</section>
+
+<script>
+const content = {
+  en: {
+    title: "New Release",
+    listen: "Listen",
+    bioTitle: "Bio",
+    bio: "Slovak musician creating atmospheric and emotional music.",
+    music: "Music",
+    lyrics: "Lyrics",
+    live: "Live Shows",
+    social: "Follow"
+  },
+  sk: {
+    title: "Nový release",
+    listen: "Počúvaj",
+    bioTitle: "Bio",
+    bio: "Slovenský hudobník tvoriaci atmosférickú a emotívnu hudbu.",
+    music: "Hudba",
+    lyrics: "Texty",
+    live: "Koncerty",
+    social: "Sleduj"
+  }
+}
+
+function setLang(lang) {
+  document.getElementById("title").innerText = content[lang].title;
+  document.getElementById("listenBtn").innerText = content[lang].listen;
+  document.getElementById("bioTitle").innerText = content[lang].bioTitle;
+  document.getElementById("bioText").innerText = content[lang].bio;
+  document.getElementById("musicTitle").innerText = content[lang].music;
+  document.getElementById("lyricsTitle").innerText = content[lang].lyrics;
+  document.getElementById("liveTitle").innerText = content[lang].live;
+  document.getElementById("socialTitle").innerText = content[lang].social;
+}
+</script>
 
 </body>
 </html>
