@@ -1,180 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Psycho Love</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psycho Love| Matej Smutný</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
 
-<style>
+  <style>
 
-body {
-  margin: 0;
-  background: black;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
+    body {
+      margin: 0;
+      background: #050505;
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 60px 20px;
+    }
 
-/* BACK */
-.back {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 14px;
-  opacity: 0.5;
-  text-decoration: none;
-  color: white;
-  z-index: 1000;
-}
+    /* 🌫️ BACKGROUND GLOW */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.04), transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.03), transparent 50%);
+      z-index: 0;
+    }
 
-.back:hover {
-  opacity: 1;
-}
+    /* ⭐ STARS */
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
 
-/* SECTIONS */
-.section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
-}
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      opacity: 0.5;
+      border-radius: 50%;
+      animation: twinkle 4s infinite ease-in-out;
+    }
 
-/* TEXT STYLES */
-.big {
-  font-size: 64px;
-  font-weight: 600;
-}
+    @keyframes twinkle {
+      0%,100% { opacity:0.2; transform:scale(1);}
+      50% { opacity:1; transform:scale(1.6);}
+    }
 
-.medium {
-  font-size: 32px;
-  opacity: 0.85;
-}
+    .star:nth-child(1){top:10%;left:20%;}
+    .star:nth-child(2){top:30%;left:70%;}
+    .star:nth-child(3){top:80%;left:40%;}
+    .star:nth-child(4){top:60%;left:10%;}
+    .star:nth-child(5){top:20%;left:90%;}
+    .star:nth-child(6){top:75%;left:75%;}
+    .star:nth-child(7){top:50%;left:50%;}
 
-.small {
-  font-size: 20px;
-  opacity: 0.6;
-}
+    /* 🔙 BACK */
+    .back {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      font-size: 13px;
+      opacity: 0.4;
+      text-decoration: none;
+      color: white;
+      z-index: 3;
+    }
 
-/* GLITCH */
-.glitch {
-  position: relative;
-}
+    .back:hover {
+      opacity: 1;
+    }
 
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-}
+    /* MAIN WRAP */
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-.glitch::before {
-  color: red;
-  transform: translate(-2px, -2px);
-  opacity: 0.4;
-}
+    /* TITLE */
+    h1 {
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 10px;
+      font-weight: 400;
+      margin-bottom: 60px;
+    }
 
-.glitch::after {
-  color: blue;
-  transform: translate(2px, 2px);
-  opacity: 0.4;
-}
+    /* 🎥 VIDEO */
+    .video {
+      margin-bottom: 80px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transition: 0.4s;
+    }
 
-/* FADE */
-.fade {
-  animation: fadeIn 1.5s ease;
-}
+    .video:hover {
+      transform: translateY(-4px);
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .video iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      display: block;
+    }
 
-/* GLOW */
-.glow {
-  text-shadow: 0 0 20px rgba(255,255,255,0.4);
-}
+    /* 🎵 LYRICS */
+    .lyrics {
+      font-size: 13px;
+      line-height: 2;
+      letter-spacing: 2px;
+      white-space: pre-line;
+      opacity: 0.8;
+      text-align: left;
+    }
 
-</style>
+    /* ✨ FADE IN */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .fade:nth-child(2) { animation-delay: 0.2s; }
+    .fade:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<a href="index.html" class="back">back</a>
-
-<div class="section fade">
-  <div class="big glitch glow" data-text="Psycho Love">Psycho Love</div>
+<!-- STARS -->
+<div class="stars">
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
 </div>
 
-<div class="section">
-  <div class="medium">Our love it used to be so colorful</div>
+<a href="van-stories.html" class="back">← back</a>
+
+<div class="wrapper">
+
+  <h1 class="fade">PSYCHO LOVE</h1>
+
+  <!-- 🎥 YOUTUBE (sem si daj svoj link) -->
+<div class="audio-player fade">
+  <audio controls>
+    <source src="audio/psycho-love.mp3" type="audio/mpeg">
+  </audio>
 </div>
 
-<div class="section">
-  <div class="big">Now it's so black and white like a funeral</div>
-</div>
+  <div class="lyrics fade">
+Our love it used to be so colorful
+Now it's so black and white like a funeral
+Now you got me tossing and turning in my sleep (Cause I know I gotta sort it out)
+I can't get you out of my head I need relief (Up until the morning now)
 
-<div class="section">
-  <div class="small">Now you got me tossing and turning in my sleep</div>
-</div>
+Cause I really need you now
+And I will walk the line for your
 
-<div class="section">
-  <div class="medium">I can't get you out of my head I need relief</div>
-</div>
+Love, love was so amazing magical
+Your love, love your love is psychological
+Cause you make me feel complete
+I'm falling for your
+Love, love
+Your love is psychological
 
-<div class="section">
-  <div class="big glitch" data-text="I need you now">Cause I really need you now</div>
-</div>
+Baby I miss the way that you used to taste (Yeah)
+Your lips were like a drug inside of me (Yeah, yeah, yeah)
+I'm tossing and turning, can't get no sleep
+The one that got away
 
-<div class="section">
-  <div class="medium">And I will walk the line for your</div>
-</div>
+Cause I really need you now
+And I will walk the line for your
 
-<div class="section">
-  <div class="big glow">Love love was so amazing magical</div>
-</div>
+Love, love was so amazing magical
+Your love, love, your love is psychological
+Cause you, make me feel complete
+I'm falling for your
 
-<div class="section">
-  <div class="big glitch" data-text="psychological">Your love is psychological</div>
-</div>
+Love, love
+Your love is psychological
+Falling for you, falling for you
+Falling for you falling for you
+I'm falling for your
+Love, love
+Your love is psychological
 
-<div class="section">
-  <div class="medium">Cause you make me feel complete</div>
-</div>
+Psychological
 
-<div class="section">
-  <div class="big">I'm falling for your love</div>
-</div>
+Love, love was so amazing magical
+Your love, love, your love is psychological
+Cause you, make me feel complete
+I'm falling for your
+Love, love
+Your love is psychological
 
-<div class="section">
-  <div class="medium">Baby I miss the way that you used to taste</div>
-</div>
+Falling for you, falling for you
+Falling for you falling for you
+I'm falling for your
+Falling for you, falling for you
+Falling for you falling for your
 
-<div class="section">
-  <div class="small">Your lips were like a drug inside of me</div>
-</div>
+Love, love
+I'm falling for your
+Love, love
+Love, love, your love is psychological
 
-<div class="section">
-  <div class="medium">I'm tossing and turning can't get no sleep</div>
-</div>
+  </div>
 
-<div class="section">
-  <div class="big glitch">The one that got away</div>
-</div>
-
-<div class="section">
-  <div class="big glow">Falling for you falling for you</div>
-</div>
-
-<div class="section">
-  <div class="medium">Your love is psychological</div>
-</div>
-
-<div class="section">
-  <div class="big glitch glow" data-text="Love">Love</div>
 </div>
 
 </body>
