@@ -103,11 +103,23 @@ body {
   position: relative;
   z-index: 2;
 
-  font-family: 'Special Elite', monospace;
-  font-size: 60px;
-  letter-spacing: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  font-size: 58px;
+  letter-spacing: 10px;
   text-transform: lowercase;
   text-align: center;
+
+  /* 🔥 nie čistá biela → viac film feel */
+  color: rgba(230,230,230,0.85);
+
+  /* 🔥 jemná "chyba" = human feel */
+  transform: scaleY(1.05);
+
+  /* 🔥 grain / depth */
+  text-shadow: 
+    0 0 1px rgba(255,255,255,0.2),
+    0 10px 30px rgba(0,0,0,0.8);
 }
 
 /* ================= CONTENT ================= */
@@ -710,4 +722,64 @@ section {
   );
 
   z-index: -1;
+}
+/* SECTION TITLE SMALL */
+.discography-section {
+  font-size: 14px;
+  letter-spacing: 3px;
+  opacity: 0.5;
+  margin: 60px 0 20px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* menšie covers */
+.discography-grid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+/* 🔥 SINGLES GRID (menšie, viac vedľa seba) */
+.singles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+/* SINGLE CARD */
+.single {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* IMAGE */
+.single img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* NAME */
+.single-name {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* YEAR */
+.single-year {
+  font-size: 11px;
+  opacity: 0.4;
+}
+
+/* HOVER */
+.single:hover {
+  transform: translateY(-4px);
+}
+
+.single:hover img {
+  opacity: 0.85;
 }
