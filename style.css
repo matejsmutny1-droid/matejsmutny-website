@@ -1116,3 +1116,51 @@ section {
   }
 
 }
+/* ================= MOBILE FIX FINAL ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 ALBUM GRID – FIX VEĽKOSTI */
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* 🔥 FORCE rovnaká veľkosť (kľúčové!) */
+  .album {
+    display: block;
+  }
+
+  .album img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+
+  /* 🔥 názvy zarovnať presne pod stred */
+  .album-name {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* ❗ CRITICAL FIX – odstráni “Aura väčšia” efekt */
+  .discography-grid > a {
+    width: 100%;
+  }
+
+  /* 🔥 BIO – konečne symetria */
+  .bio p {
+    max-width: 520px;
+    margin: 0 auto;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    text-align: justify; /* 🔥 toto si chcel */
+    text-justify: inter-word;
+  }
+
+}
