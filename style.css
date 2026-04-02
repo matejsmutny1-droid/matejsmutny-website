@@ -1197,3 +1197,46 @@ section {
   }
 
 }
+/* ================= FORCE MOBILE FIX ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 ALBUM COVERS – FORCE rovnaká veľkosť */
+  .discography-grid .album img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+
+  /* 🔥 FIX – aby oba albumy mali rovnaký box */
+  .discography-grid .album {
+    width: 100% !important;
+  }
+
+  /* 🔥 ALBUM PAGE – FULL WIDTH (toto je hlavný fix) */
+  .album-page {
+    max-width: 100% !important;
+    padding: 100px 20px !important;
+  }
+
+  /* 🔥 COVER NA ALBUM PAGE */
+  .album-cover {
+    width: 85% !important;
+    max-width: 320px !important;
+  }
+
+  /* 🔥 TITLE */
+  .album-page h1 {
+    font-size: 22px !important;
+    letter-spacing: 6px !important;
+  }
+
+  /* 🔥 TRACKLIST */
+  .tracklist a {
+    font-size: 17px !important;
+  }
+
+}
