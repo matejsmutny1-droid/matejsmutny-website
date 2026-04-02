@@ -1164,3 +1164,36 @@ section {
   }
 
 }
+@media (max-width: 700px) {
+
+  .album img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center; /* 🔥 dôležité */
+    border-radius: 18px;
+  }
+
+}
+@media (max-width: 700px) {
+
+  .album-page {
+    max-width: 100%;
+    padding: 100px 20px;
+  }
+
+  .album-cover {
+    width: 80%;   /* 🔥 väčší cover */
+    max-width: 320px;
+  }
+
+  .album-title {
+    font-size: 20px;
+    letter-spacing: 6px;
+  }
+
+  .tracklist a {
+    font-size: 16px;
+  }
+
+}
