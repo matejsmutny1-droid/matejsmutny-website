@@ -1045,3 +1045,74 @@ section {
   }
 
 }
+/* ================= MOBILE FIX (ONLY) ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 ALBUMS - rovnaká veľkosť ako Aura */
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .album img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px; /* viac premium ako predtým */
+  }
+
+  .album-name {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* 🔥 SINGLES - väčšie + čistejšie */
+  .singles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .single img {
+    border-radius: 16px;
+  }
+
+  .single-name {
+    font-size: 13px;
+  }
+
+  /* 🔥 SECTION SPACING */
+  .discography-section {
+    margin: 70px 0 20px;
+  }
+
+  .section-title {
+    margin-bottom: 50px;
+  }
+
+  /* 🔥 BIO - konečne čitateľné a symetrické */
+  .bio p {
+    max-width: 500px;
+    margin: 0 auto;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    text-align: left;
+  }
+
+  /* 🔥 SHOWS - lepšie rozloženie na mobile */
+  .show {
+    grid-template-columns: 70px 1fr 100px;
+    padding: 14px 18px;
+  }
+
+  .show-city {
+    font-size: 15px;
+  }
+
+  .show-note {
+    font-size: 11px;
+  }
+
+}
