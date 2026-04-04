@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling in the night | Matej Smutný</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      background: #050505;
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 60px 20px;
+    }
+
+    /* 🌫️ BACKGROUND GLOW */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.04), transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.03), transparent 50%);
+      z-index: 0;
+    }
+
+    /* ⭐ STARS */
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      opacity: 0.5;
+      border-radius: 50%;
+      animation: twinkle 4s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity:0.2; transform:scale(1);}
+      50% { opacity:1; transform:scale(1.6);}
+    }
+
+    .star:nth-child(1){top:10%;left:20%;}
+    .star:nth-child(2){top:30%;left:70%;}
+    .star:nth-child(3){top:80%;left:40%;}
+    .star:nth-child(4){top:60%;left:10%;}
+    .star:nth-child(5){top:20%;left:90%;}
+    .star:nth-child(6){top:75%;left:75%;}
+    .star:nth-child(7){top:50%;left:50%;}
+
+    /* 🔙 BACK */
+    .back {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      font-size: 13px;
+      opacity: 0.4;
+      text-decoration: none;
+      color: white;
+      z-index: 3;
+    }
+
+    .back:hover {
+      opacity: 1;
+    }
+
+    /* MAIN WRAP */
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* TITLE */
+    h1 {
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 10px;
+      font-weight: 400;
+      margin-bottom: 60px;
+    }
+
+    /* 🎥 VIDEO */
+    .video {
+      margin-bottom: 80px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transition: 0.4s;
+    }
+
+    .video:hover {
+      transform: translateY(-4px);
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      display: block;
+    }
+
+    /* 🎵 LYRICS */
+    .lyrics {
+      font-size: 13px;
+      line-height: 2;
+      letter-spacing: 2px;
+      white-space: pre-line;
+      opacity: 0.8;
+      text-align: left;
+    }
+
+    /* ✨ FADE IN */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .fade:nth-child(2) { animation-delay: 0.2s; }
+    .fade:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- STARS -->
+<div class="stars">
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+</div>
+
+<a href="aura.html" class="back">← back</a>
+
+<div class="wrapper">
+
+  <h1 class="fade">SCROLLING IN THE NIGHT</h1>
+  <!-- 🎥 YOUTUBE (sem si daj svoj link) -->
+<div class="audio-player fade">
+  <audio controls>
+    <source src="audio/scrolling.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+  <div class="lyrics fade">
+The magic of the moment
+Driving all the golden cars
+Sippin' a whiskey cup
+
+Smoking cigarettes
+Talking your brother gets in trouble
+While we're still holding cells
+
+No more holding hands
+Just watching friends
+They don't wanna see
+How they're takin'our chance
+
+They took our chance
+They took our chance
+They took our chance
+When we're scrolling in
+The night
+When we're scrolling
+
+Looking at cieling every night
+Feelings empty like
+Nobody's eyes
+
+Since we are going
+Maybe calling
+Lonely scrolling walls
+We trust more than
+The life which we want no more
+
+No more holding hands
+Just watching friends
+They don't wanna see
+How they're takin' our chances
+
+Took our chance
+They took our chance
+They took our chance
+When we're flowing in
+The night
+When we're scrolling
+
+Tu-ru-tu-ru-tu-tu
+
+They took our chance
+They took our chance
+They took our chance
+When we're scrolling in
+The night
+When we're scrolling in
+The night
+When we're scrolling
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1434 @@
+/* ================= RESET ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+
+.navbar.hidden {
+  opacity: 0;
+  transform: translate(-50%, -30px);
+  pointer-events: none;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  border-radius: 999px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  transition: 0.25s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* ================= LANGUAGE ================= */
+
+.lang-switch {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  z-index: 1001;
+  display: flex;
+  gap: 10px;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.lang-switch a.active,
+.lang-switch a:hover {
+  opacity: 1;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 2;
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  font-size: 58px;
+  letter-spacing: 10px;
+  text-transform: lowercase;
+  text-align: center;
+
+  /* 🔥 nie čistá biela → viac film feel */
+  color: rgba(230,230,230,0.85);
+
+  /* 🔥 jemná "chyba" = human feel */
+  transform: scaleY(1.05);
+
+  /* 🔥 grain / depth */
+  text-shadow: 
+    0 0 1px rgba(255,255,255,0.2),
+    0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 120px 20px;
+}
+
+h2 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* BIO */
+
+.bio p {
+  font-size: 16px;
+  line-height: 1.9;
+  opacity: 0.75;
+  text-align: justify;
+}
+
+/* ================= DISCOGRAPHY ================= */
+
+.discography-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.album {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.album img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.album-name {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.album:hover {
+  transform: translateY(-4px);
+}
+
+.album:hover img {
+  opacity: 0.9;
+}
+
+/* ================= ALBUM PAGE (FIXED CENTER) ================= */
+
+.album-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.album-cover {
+  width: 260px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.album-title {
+  font-family: 'Special Elite', monospace;
+  font-size: 22px;
+  letter-spacing: 8px;
+  margin-bottom: 30px;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+/* TRACKLIST */
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.track-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.track-list a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.contact-list a:hover {
+  opacity: 1;
+}
+
+/* ================= SOCIALS ================= */
+
+.socials {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 25px;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  filter: invert(1);
+  transition: 0.3s;
+}
+
+.social-icons a:hover img {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ================= MERCH ================= */
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.product {
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  display: block;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-name {
+  margin-bottom: 5px;
+}
+
+.product-price {
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.buy-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.buy-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .hero h1 {
+    font-size: 34px;
+    letter-spacing: 8px;
+  }
+
+  .nav-container {
+    gap: 15px;
+    padding: 10px 15px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 120px;
+}
+/* ================= COMING SOON ================= */
+
+.coming-soon {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.coming-soon h1 {
+  font-family: 'Special Elite', monospace;
+  font-size: 40px;
+  letter-spacing: 10px;
+  text-transform: lowercase;
+}
+
+.coming-soon p {
+  opacity: 0.5;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+/* SECTION TITLE */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+/* MUSIC PLAYER WRAP */
+.music-player {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* SPOTIFY IFRAME */
+.music-player iframe {
+  width: 100%;
+  height: 352px; /* 🔥 správna výška */
+  border: none;
+  display: block;
+}
+.music-player {
+  transition: 0.3s;
+}
+
+.music-player:hover {
+  transform: translateY(-5px);
+}
+/* SECTION */
+.music-section {
+  padding: 120px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* TITLE */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 80px;
+  letter-spacing: 3px;
+}
+
+/* FEATURED */
+.featured-track {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* COVER */
+.featured-cover {
+  width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* INFO */
+.featured-info {
+  flex: 1;
+}
+
+.featured-info h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* PLAYER */
+.featured-info iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+/* LYRICS */
+.lyrics {
+  position: relative;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 2px;
+  white-space: pre-line;
+  opacity: 0.9;
+  text-align: left;
+  padding: 60px 40px;
+
+  z-index: 2; /* text je hore */
+}
+
+/* 🔥 IMAGE BACKGROUND */
+.lyrics::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('images/fairytale.jpg') center/cover no-repeat;
+
+  opacity: 0.15;
+  filter: blur(3px);
+
+  z-index: -1; /* pod textom */
+}
+
+/* 🔥 DARK OVERLAY (aby text bol čitateľný) */
+.lyrics::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.6);
+
+  z-index: -1;
+}
+
+/* GRID */
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.track-card {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* IMAGE */
+.track-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* NAME */
+.track-card span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* HOVER */
+.track-card:hover {
+  transform: translateY(-5px);
+}
+
+.track-card:hover span {
+  opacity: 1;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .featured-track {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .featured-cover {
+    width: 180px;
+  }
+}
+/* FOOTER */
+.footer {
+  padding: 120px 20px 100px;
+  text-align: center;
+}
+
+/* SOCIALS */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* ICONS */
+.social-icons img {
+  width: 22px;
+  opacity: 0.5;
+  filter: invert(1);
+  transition: 0.3s;
+}
+
+.social-icons a:hover img {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* CONTACT */
+.contact-block h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+/* EMAILS */
+.contact-block a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.contact-block a:hover {
+  opacity: 1;
+}
+.lyrics {
+  max-width: 520px;
+}
+.video-link {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-link img {
+  width: 100%;
+  display: block;
+  filter: brightness(0.7);
+  transition: 0.4s;
+}
+
+.video-link:hover img {
+  filter: brightness(1);
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  font-size: 40px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.video-link:hover .play {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 1;
+}
+.spotify iframe {
+  height: 80px;
+}
+.audio-player {
+  max-width: 400px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+/* čistý minimal look */
+.audio-player audio {
+  width: 100%;
+  height: 40px;
+  opacity: 0.85;
+  filter: invert(1);
+  transition: 0.3s;
+}
+
+.audio-player audio:hover {
+  opacity: 1;
+}
+.audio-player {
+  background: rgba(255,255,255,0.04);
+  padding: 12px 20px;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+}
+/* TRACKLIST */
+.tracklist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* LINKS */
+.tracklist a {
+  text-decoration: none;
+  color: white; /* 🔥 odstráni modrú */
+  font-size: 16px;
+  opacity: 0.5;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+/* HOVER */
+.tracklist a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+/* WRAP pre lyrics */
+.lyrics {
+  position: relative;
+  z-index: 2;
+}
+
+/* BACKGROUND IMAGE */
+.lyrics::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('images/fairytale.jpg') center/cover no-repeat;
+
+  opacity: 0.12; /* 🔥 kľúčová hodnota */
+  filter: blur(2px);
+
+  z-index: -1;
+}
+
+/* jemný fade (aby text bol čitateľný) */
+.lyrics::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0.4) 50%,
+    rgba(0,0,0,0.9) 100%
+  );
+
+  z-index: -1;
+}
+/* SECTION TITLE SMALL */
+.discography-section {
+  font-size: 14px;
+  letter-spacing: 3px;
+  opacity: 0.5;
+  margin: 60px 0 20px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* menšie covers */
+.discography-grid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+/* 🔥 SINGLES GRID (menšie, viac vedľa seba) */
+.singles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+/* SINGLE CARD */
+.single {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* IMAGE */
+.single img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* NAME */
+.single-name {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* YEAR */
+.single-year {
+  font-size: 11px;
+  opacity: 0.4;
+}
+
+/* HOVER */
+.single:hover {
+  transform: translateY(-4px);
+}
+
+.single:hover img {
+  opacity: 0.85;
+}
+/* ================= SHOWS ================= */
+
+.shows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* ROW */
+.show {
+  display: grid;
+  grid-template-columns: 100px 1fr 160px; /* 🔥 lepšie vyváženie */
+
+  align-items: center;
+
+  padding: 16px 0; /* ❗ odstránený side padding → zarovnanie s content */
+  border-radius: 0; /* ❗ odstránené "karty" */
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  background: none;
+  backdrop-filter: none;
+
+  transition: 0.3s;
+}
+
+.show:hover {
+  transform: translateY(-2px);
+}
+
+/* DATE */
+.show-date {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.4;
+  text-align: left;
+}
+
+/* CITY (CENTER) */
+.show-city {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* NOTE (RIGHT) */
+.show-note {
+  text-align: right;
+  font-size: 12px;
+  opacity: 0.4;
+  letter-spacing: 1px;
+}
+.show-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 160px; /* pevné stĺpce */
+  align-items: center;
+}
+
+.show-date {
+  text-align: left;
+}
+
+.show-city {
+  text-align: left; /* ❗ zmeň z center na left */
+}
+
+.show-type {
+  text-align: right;
+}
+.show-date {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 24px;
+}
+.card {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ================= FIX DISCOGRAPHY (UNIFIED SIZE) ================= */
+
+/* 🔥 rovnaký grid pre všetko */
+.discography-grid,
+.singles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+}
+
+/* 🔥 všetky obrázky rovnaké */
+.album img,
+.single img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* 🔥 jemné zjednotenie textu */
+.album-name,
+.single-name {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.single-year {
+  font-size: 12px;
+  opacity: 0.4;
+}
+/* ================= FIX ALBUM SIZE ================= */
+
+/* wrapper kde máš albumy (tie veľké) */
+.albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+}
+
+/* samotný album */
+.albums img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+/* 🔥 FORCE všetky albumy na rovnakú veľkosť */
+.album img {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+ /* ================= FIX ALBUM SIZE + ALIGN ================= */
+
+.discography-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+  justify-content: center;
+  gap: 32px;
+}
+/* ================= PERFECT ALIGN (SYMMETRY) ================= */
+
+.discography-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* rovnaké ako singles */
+  gap: 24px;
+}
+
+/* každý album bude zaberať 1 stĺpec */
+.discography-grid .album {
+  grid-column: span 1;
+}
+
+/* POSUN NA STRED (kľúčové) */
+.discography-grid .album:nth-child(1) {
+  grid-column: 2;
+}
+
+.discography-grid .album:nth-child(2) {
+  grid-column: 3;
+}
+/* ================= MOBILE UPGRADE ================= */
+
+@media (max-width: 700px) {
+
+  /* HERO */
+  .hero h1 {
+    font-size: 28px;
+    letter-spacing: 6px;
+  }
+
+  /* NAVBAR */
+  .nav-container {
+    padding: 10px 18px;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 80px 18px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  /* DISCOGRAPHY */
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .album-name {
+    font-size: 12px;
+  }
+
+  /* SINGLES */
+  .singles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .single-name {
+    font-size: 11px;
+  }
+
+  .single-year {
+    font-size: 10px;
+  }
+
+  /* SHOWS 🔥 */
+  .show {
+    grid-template-columns: 70px 1fr 90px;
+    padding: 14px 0;
+  }
+
+  .show-date {
+    font-size: 12px;
+  }
+
+  .show-city {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .show-note {
+    font-size: 10px;
+  }
+
+  /* BIO 🔥 (veľký fix readability) */
+  .bio p {
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: left; /* ❗ odstráni ten divný justified look */
+  }
+
+  /* MUSIC PLAYER */
+  .music-player iframe {
+    height: 300px;
+  }
+
+}
+/* ================= MOBILE FIX (ONLY) ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 ALBUMS - rovnaká veľkosť ako Aura */
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .album img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px; /* viac premium ako predtým */
+  }
+
+  .album-name {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* 🔥 SINGLES - väčšie + čistejšie */
+  .singles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .single img {
+    border-radius: 16px;
+  }
+
+  .single-name {
+    font-size: 13px;
+  }
+
+  /* 🔥 SECTION SPACING */
+  .discography-section {
+    margin: 70px 0 20px;
+  }
+
+  .section-title {
+    margin-bottom: 50px;
+  }
+
+  /* 🔥 BIO - konečne čitateľné a symetrické */
+  .bio p {
+    max-width: 500px;
+    margin: 0 auto;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    text-align: left;
+  }
+
+  /* 🔥 SHOWS - lepšie rozloženie na mobile */
+  .show {
+    grid-template-columns: 70px 1fr 100px;
+    padding: 14px 18px;
+  }
+
+  .show-city {
+    font-size: 15px;
+  }
+
+  .show-note {
+    font-size: 11px;
+  }
+
+}
+/* ================= MOBILE FIX FINAL ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 ALBUM GRID – FIX VEĽKOSTI */
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* 🔥 FORCE rovnaká veľkosť (kľúčové!) */
+  .album {
+    display: block;
+  }
+
+  .album img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+
+  /* 🔥 názvy zarovnať presne pod stred */
+  .album-name {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* ❗ CRITICAL FIX – odstráni “Aura väčšia” efekt */
+  .discography-grid > a {
+    width: 100%;
+  }
+
+  /* 🔥 BIO – konečne symetria */
+  .bio p {
+    max-width: 520px;
+    margin: 0 auto;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    text-align: justify; /* 🔥 toto si chcel */
+    text-justify: inter-word;
+  }
+
+}
+@media (max-width: 700px) {
+
+  .album img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center; /* 🔥 dôležité */
+    border-radius: 18px;
+  }
+
+}
+@media (max-width: 700px) {
+
+  .album-page {
+    max-width: 100%;
+    padding: 100px 20px;
+  }
+
+  .album-cover {
+    width: 80%;   /* 🔥 väčší cover */
+    max-width: 320px;
+  }
+
+  .album-title {
+    font-size: 20px;
+    letter-spacing: 6px;
+  }
+
+  .tracklist a {
+    font-size: 16px;
+  }
+
+}
+/* ================= FORCE MOBILE FIX ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 ALBUM COVERS – FORCE rovnaká veľkosť */
+  .discography-grid .album img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 18px !important;
+  }
+
+  /* 🔥 FIX – aby oba albumy mali rovnaký box */
+  .discography-grid .album {
+    width: 100% !important;
+  }
+
+  /* 🔥 ALBUM PAGE – FULL WIDTH (toto je hlavný fix) */
+  .album-page {
+    max-width: 100% !important;
+    padding: 100px 20px !important;
+  }
+
+  /* 🔥 COVER NA ALBUM PAGE */
+  .album-cover {
+    width: 85% !important;
+    max-width: 320px !important;
+  }
+
+  /* 🔥 TITLE */
+  .album-page h1 {
+    font-size: 22px !important;
+    letter-spacing: 6px !important;
+  }
+
+  /* 🔥 TRACKLIST */
+  .tracklist a {
+    font-size: 17px !important;
+  }
+
+}
+@media (max-width: 700px) {
+
+  /* ================= DISCOGRAPHY FIX ================= */
+
+  .discography-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .album img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  /* 🔥 FIX: odstráni rozdiel veľkostí */
+  .album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  /* ================= ALBUM PAGE FIX ================= */
+
+  .album-page {
+    max-width: 100%;       /* 🔥 KILL 400px LIMIT */
+    padding: 100px 20px;
+  }
+
+  .album-cover {
+    width: 85vw;           /* 🔥 responsive veľkosť */
+    max-width: 320px;
+  }
+
+  .album-title {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .track-list a {
+    font-size: 16px;
+    opacity: 0.7;
+  }
+
+}
+.back-button {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  opacity: 1;
+  transform: translateX(-3px);
+}
+.back-button {
+  position: fixed;
+  top: 30px;
+  left: calc(50% - 400px + 20px); /* 🔥 align s content */
+
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+/* ================= FIX: VAN STORIES SIZE (MOBILE ONLY) ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 vypne všetky staré obmedzenia */
+  .album img {
+    max-width: none !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  /* 🔥 zabezpečí rovnaký box pre oba albumy */
+  .discography-grid .album {
+    width: 100% !important;
+  }
+
+}
+/* ================= REAL FIX (MOBILE GRID) ================= */
+
+@media (max-width: 700px) {
+
+  .discography-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* 🔥 kľúčové – každý album má rovnaký box */
+  .discography-grid .album {
+    width: 100%;
+  }
+
+  /* 🔥 obrázok VŽDY vyplní box */
+  .discography-grid .album img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+}
+/* ================= FINAL MOBILE FIX – VAN STORIES SIZE ================= */
+
+@media (max-width: 700px) {
+
+  /* ❗ reset desktop positioning */
+  .discography-grid .album:nth-child(1),
+  .discography-grid .album:nth-child(2) {
+    grid-column: auto !important;
+  }
+
+  /* 🔥 rovnaké boxy */
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .discography-grid .album {
+    width: 100%;
+  }
+
+  .discography-grid .album img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+}
+/* ================= ALBUM PAGE – MODERN TITLE ================= */
+
+.album-page h1 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+
+  font-size: 22px;
+  letter-spacing: 6px;
+  text-transform: lowercase;
+
+  color: rgba(230,230,230,0.9);
+
+  margin: 30px 0 20px;
+}
+
+/* 🔥 tracklist viac clean ako singles */
+.tracklist a {
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.tracklist a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+@media (max-width: 700px) {
+
+  .album-page h1 {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  .tracklist a {
+    font-size: 16px;
+    opacity: 0.6;
+  }
+
+}
