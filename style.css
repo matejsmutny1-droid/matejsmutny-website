@@ -1240,3 +1240,82 @@ section {
   }
 
 }
+@media (max-width: 700px) {
+
+  /* ================= DISCOGRAPHY FIX ================= */
+
+  .discography-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .album img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  /* 🔥 FIX: odstráni rozdiel veľkostí */
+  .album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  /* ================= ALBUM PAGE FIX ================= */
+
+  .album-page {
+    max-width: 100%;       /* 🔥 KILL 400px LIMIT */
+    padding: 100px 20px;
+  }
+
+  .album-cover {
+    width: 85vw;           /* 🔥 responsive veľkosť */
+    max-width: 320px;
+  }
+
+  .album-title {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .track-list a {
+    font-size: 16px;
+    opacity: 0.7;
+  }
+
+}
+.back-button {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  opacity: 1;
+  transform: translateX(-3px);
+}
+.back-button {
+  position: fixed;
+  top: 30px;
+  left: calc(50% - 400px + 20px); /* 🔥 align s content */
+
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
