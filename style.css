@@ -1319,3 +1319,24 @@ section {
 
   transition: 0.3s;
 }
+/* ================= FIX: VAN STORIES SIZE (MOBILE ONLY) ================= */
+
+@media (max-width: 700px) {
+
+  /* 🔥 vypne všetky staré obmedzenia */
+  .album img {
+    max-width: none !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  /* 🔥 zabezpečí rovnaký box pre oba albumy */
+  .discography-grid .album {
+    width: 100% !important;
+  }
+
+}
