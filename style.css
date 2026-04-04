@@ -1340,3 +1340,55 @@ section {
   }
 
 }
+/* ================= REAL FIX (MOBILE GRID) ================= */
+
+@media (max-width: 700px) {
+
+  .discography-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* 🔥 kľúčové – každý album má rovnaký box */
+  .discography-grid .album {
+    width: 100%;
+  }
+
+  /* 🔥 obrázok VŽDY vyplní box */
+  .discography-grid .album img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+}
+/* ================= FINAL MOBILE FIX – VAN STORIES SIZE ================= */
+
+@media (max-width: 700px) {
+
+  /* ❗ reset desktop positioning */
+  .discography-grid .album:nth-child(1),
+  .discography-grid .album:nth-child(2) {
+    grid-column: auto !important;
+  }
+
+  /* 🔥 rovnaké boxy */
+  .discography-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .discography-grid .album {
+    width: 100%;
+  }
+
+  .discography-grid .album img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+}
