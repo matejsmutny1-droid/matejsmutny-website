@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Privacy Policy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  background: #0a0a0a;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 750px;
+  margin: 100px auto;
+  padding: 0 20px 80px;
+}
+
+h1 {
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 22px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.nav a {
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="#" onclick="goBack()">← back</a>
+</div>
+
+<div class="container">
+
+<h1>Privacy Policy & Data Protection</h1>
+
+<h2>1. General Information</h2>
+<p>
+This website processes personal data in accordance with the General Data Protection Regulation (EU) 2016/679 (GDPR).
+We are committed to protecting your privacy and handling your personal data in a transparent and secure manner.
+</p>
+
+<h2>2. What Data We Collect</h2>
+<p>
+When placing an order, we may collect personal information including your full name, email address, shipping address,
+and any additional information voluntarily provided through the order form.
+</p>
+
+<h2>3. Purpose of Processing</h2>
+<p>
+Your personal data is collected and processed strictly for the purpose of fulfilling your order, including communication,
+order handling, and delivery. We do not use your data for marketing purposes without your explicit consent.
+</p>
+
+<h2>4. Legal Basis</h2>
+<p>
+The legal basis for processing your personal data is your consent and the necessity to perform a contract (order fulfillment).
+By submitting an order, you explicitly agree to this processing.
+</p>
+
+<h2>5. Data Sharing</h2>
+<p>
+We do not sell, trade, or otherwise transfer your personal data to third parties.
+Data may only be shared with essential service providers (such as delivery services) strictly for order completion.
+</p>
+
+<h2>6. Data Retention</h2>
+<p>
+Your personal data is retained only for as long as necessary to fulfill the purpose of the order and comply with legal obligations.
+After this period, your data will be securely deleted.
+</p>
+
+<h2>7. Your Rights</h2>
+<p>
+You have the right to request access to your personal data, request correction or deletion, and object to processing.
+You may exercise these rights at any time by contacting us.
+</p>
+
+<h2>8. Contact</h2>
+<p>
+If you have any questions regarding your data or wish to exercise your rights, please contact:
+<br><br>
+hello@matejsmutny.com
+</p>
+
+</div>
+
+<script>
+function goBack() {
+  window.location.replace("merch.html");
+}
+
+// 🔥 zabráni návratu na GDPR cez browser back
+history.replaceState(null, "", "merch.html");
+
+window.addEventListener("popstate", function () {
+  window.location.replace("merch.html");
+});
+</script>
+
+</body>
+</html>

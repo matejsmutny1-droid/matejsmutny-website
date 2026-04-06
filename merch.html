@@ -1,31 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Merch</title>
+<meta charset="UTF-8">
+<title>Merch</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  background: #0a0a0a;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+/* HEADER */
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 6px;
+  margin: 80px 0 40px;
+  font-size: 20px;
+  text-transform: lowercase;
+}
+
+.navbar {
+  text-align: center;
+  padding: 20px;
+}
+
+.navbar a {
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* GRID */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 50px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.product {
+  cursor: pointer;
+}
+
+.product img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: 0.4s;
+}
+
+.product:hover img {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.product h2 {
+  font-size: 12px;
+  margin-top: 12px;
+  color: #aaa;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.modal-content {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 0 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* 👈 FIX */
+}
+
+/* GALLERY */
+
+.gallery {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 220px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* BACK */
+
+.close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #666;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* DETAIL */
+
+.modal h2 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.price {
+  text-align: center;
+  margin: 10px 0 25px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* FORM */
+
+.order-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #111;
+  border: 1px solid #222;
+  color: white;
+  font-size: 13px;
+}
+
+.order-form button {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+/* GDPR */
+
+.gdpr-wrap {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: start;
+  margin: 15px 0 20px;
+  font-size: 12px;
+  color: #777;
+  width: 100%;
+}
+
+.gdpr-wrap input {
+  margin-top: 3px;
+  accent-color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.gdpr-wrap label {
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+/* DELIVERY */
+
+.delivery {
+  text-align: center;
+  color: #444;
+  margin: 60px 0;
+  font-size: 12px;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.buy-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 30px;
+
+  background: transparent;
+  color: white;
+
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* 🔥 glow efekt */
+.buy-btn:hover {
+  background: white;
+  color: black;
+  border-color: white;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* click */
+.buy-btn:active {
+  transform: scale(0.97);
+}
+
+/* loading stav */
+.buy-btn.loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.buy-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInBtn 0.5s ease forwards;
+}
+
+.buy-btn.loading::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInBtn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* menší padding */
+  .modal-content {
+    margin: 40px auto;
+    padding: 0 16px 60px;
+  }
+
+  /* gallery → 1 column */
+  .gallery {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .gallery img {
+    max-width: 100%;
+  }
+
+  /* title */
+  .modal h2 {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* price */
+  .price {
+    font-size: 13px;
+  }
+
+  /* button */
+  .buy-btn {
+    padding: 16px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+  }
+
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-links">
-      <a href="index.html">home</a>
-    </div>
-  </div>
-</nav>
+<div class="navbar">
+  <a href="index.html">home</a>
+ <a href="gdpr.html" id="gdpr-link" style="margin-left:20px;">GDPR</a>
+</div>
 
-<!-- COMING SOON -->
-<section class="coming-soon">
+<h1>merch</h1>
 
-  <h1>merch</h1>
-  <p>store coming soon</p>
+<div class="products">
 
-</section>
+<div class="product" onclick="openModal('ep')">
+  <img src="./images/vanstoriess.jpg">
+  <h2>Van Stories CD</h2>
+</div>
+
+<div class="product" onclick="openModal('album')">
+  <img src="./images/auraa.jpg">
+  <h2>Aura CD</h2>
+</div>
+
+<div class="product" onclick="openModal('aura')">
+  <img src="./images/aura1.jpg">
+  <h2>Aura T-shirt</h2>
+</div>
+
+<div class="product" onclick="openModal('hoodie')">
+  <img src="./images/hoodie1.jpg">
+  <h2>Magentic Clouds Hoodie</h2>
+</div>
+
+<div class="product" onclick="openModal('look')">
+  <img src="./images/look1.jpg">
+  <h2>Look Amazing T-shirt</h2>
+</div>
+
+<div class="product" onclick="openModal('pins')">
+  <img src="./images/pins.jpg">
+  <h2>Look Amazing Pins</h2>
+</div>
+
+<div class="product" onclick="openModal('cap')">
+  <img src="./images/cap1.jpg">
+  <h2>Psycho Love Cap</h2>
+</div>
+
+</div>
+
+<div class="delivery">
+Delivery time is 2–4 weeks
+</div>
+
+<div class="modal" id="modal">
+  <div class="close" onclick="closeModal()">← back</div>
+  <div class="modal-content" id="content"></div>
+</div>
+
+<script>
+
+function openModal(p) {
+
+  history.pushState({ product: p }, "", "#"+p); // 👈 ADD
+
+  localStorage.setItem("lastProduct", p);
+
+  const c = document.getElementById("content");
+  let html = "";
+
+  if (p === "aura") {
+    html = `
+      <div class="gallery">
+        <img src="./images/aura1.jpg" onclick="openLightbox(this.src)">
+        <img src="./images/aura2.jpg" onclick="openLightbox(this.src)">
+      </div>
+      <h2>Aura T-shirt</h2>
+      <div class="price">€15</div>
+      ${form("Aura T-shirt", true)}
+    `;
+  }
+
+  if (p === "hoodie") {
+    html = `
+      <div class="gallery">
+        <img src="./images/hoodie1.jpg" onclick="openLightbox(this.src)">
+        <img src="./images/hoodie2.jpg" onclick="openLightbox(this.src)">
+      </div>
+      <h2>Magentic Clouds Hoodie</h2>
+      <div class="price">€25</div>
+      ${form("Magentic Clouds Hoodie", true)}
+    `;
+  }
+
+  if (p === "ep") {
+    html = `
+      <div class="gallery">
+        <img src="./images/vanstoriess.jpg" onclick="openLightbox(this.src)">
+      </div>
+      <h2>Van Stories EP</h2>
+      <div class="price">€10</div>
+      ${form("Van Stories EP", false)}
+    `;
+  }
+
+  if (p === "album") {
+    html = `
+      <div class="gallery">
+        <img src="./images/auraa.jpg" onclick="openLightbox(this.src)">
+      </div>
+      <h2>Aura Album</h2>
+      <div class="price">€15</div>
+      ${form("Aura Album", false)}
+    `;
+  }
+
+  if (p === "look") {
+    html = `
+      <div class="gallery">
+        <img src="./images/look1.jpg" onclick="openLightbox(this.src)">
+        <img src="./images/look2.jpg" onclick="openLightbox(this.src)">
+      </div>
+      <h2>Look Amazing T-shirt</h2>
+      <div class="price">€20</div>
+      ${form("Look Amazing T-shirt", true)}
+    `;
+  }
+
+  if (p === "pins") {
+    html = `
+      <div class="gallery">
+        <img src="./images/pins.jpg" onclick="openLightbox(this.src)">
+      </div>
+      <h2>Look Amazing Pins</h2>
+      <div class="price">€5</div>
+
+
+
+      ${form("Look Amazing Pins", false)}
+    `;
+  }
+
+  if (p === "cap") {
+    html = `
+      <div class="gallery">
+        <img src="./images/cap1.jpg" onclick="openLightbox(this.src)">
+        <img src="./images/cap2.jpg" onclick="openLightbox(this.src)">
+        <img src="./images/cap3.jpg" onclick="openLightbox(this.src)">
+        <img src="./images/cap4.jpg" onclick="openLightbox(this.src)">
+      </div>
+      <h2>Psycho Love Cap</h2>
+      <div class="price">€20</div>
+
+      
+
+      ${form("Psycho Love Cap", false)}
+    `;
+  }
+
+  c.innerHTML = html;
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+  history.back(); // 👈 KĽÚČ
+}
+
+function form(product) {
+  return `
+    <button class="buy-btn" onclick="goToStripe('${product}')">
+  Buy
+</button>
+  `;
+}
+
+function goToStripe(product) {
+
+  const btn = event.target;
+  btn.classList.add("loading");
+
+  const links = {
+    "Van Stories EP": "https://buy.stripe.com/dRmaEZ1Ajd9y96m9K43AY00",
+    "Aura Album": "https://buy.stripe.com/eVq8wRceXb1qeqGaO83AY01",
+    "Aura T-shirt": "https://buy.stripe.com/9B67sN1Aj8Tibeu09u3AY02",
+    "Magentic Clouds Hoodie": "https://buy.stripe.com/4gMcN72EnedC4Q6e0k3AY03",
+    "Look Amazing T-shirt": "https://buy.stripe.com/eVqeVf1Aj3yYfuKf4o3AY04",
+    "Look Amazing Pins": "https://buy.stripe.com/7sYaEZceX8TifuK2hC3AY05",
+    "Psycho Love Cap": "https://buy.stripe.com/4gMfZjbaT5H63M29K43AY06"
+  };
+
+  const url = links[product];
+
+  setTimeout(() => {
+    window.location.href = url;
+  }, 400);
+}
+
+function sendOrder(e, product) {
+  e.preventDefault();
+
+  const gdpr = document.getElementById("gdpr");
+  if (!gdpr.checked) {
+    alert("You must agree to GDPR policy");
+    return;
+  }
+
+  // 👉 MAPOVANIE PRODUKT → STRIPE LINK
+  const links = {
+    "Van Stories EP": "https://buy.stripe.com/dRmaEZ1Ajd9y96m9K43AY00",
+    "Aura Album": "https://buy.stripe.com/eVq8wRceXb1qeqGaO83AY01",
+    "Aura T-shirt": "https://buy.stripe.com/9B67sN1Aj8Tibeu09u3AY02",
+    "Magentic Clouds Hoodie": "https://buy.stripe.com/4gMcN72EnedC4Q6e0k3AY03",
+    "Look Amazing T-shirt": "https://buy.stripe.com/eVqeVf1Aj3yYfuKf4o3AY04",
+    "Look Amazing Pins": "https://buy.stripe.com/7sYaEZceX8TifuK2hC3AY05",
+    "Psycho Love Cap": "https://buy.stripe.com/4gMfZjbaT5H63M29K43AY06"
+  };
+
+  const url = links[product];
+
+  if (!url) {
+    alert("Product not found");
+    return;
+  }
+
+  // 👉 REDIRECT NA STRIPE
+  window.location.href = url;
+}
+
+function goToGDPR(e) {
+  e.preventDefault();
+  window.location.replace("gdpr.html");
+}
+
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function saveFormData() {
+  const form = document.querySelector(".order-form");
+  if (!form) return;
+
+  const data = new FormData(form);
+  const obj = {};
+
+  for (let [key, value] of data.entries()) {
+    obj[key] = value;
+  }
+
+  localStorage.setItem("formData", JSON.stringify(obj));
+  localStorage.setItem("returnFromGDPR", "true"); // 👈 ADD
+}
+
+
+// 👇 TOTO TI CHÝBA — preto to nefunguje
+window.addEventListener("load", () => {
+  const shouldReturn = localStorage.getItem("returnFromGDPR");
+
+  if (!shouldReturn) return; // 👈 KĽÚČ
+
+  const lastProduct = localStorage.getItem("lastProduct");
+  if (!lastProduct) return;
+
+  openModal(lastProduct);
+
+  setTimeout(() => {
+    const saved = JSON.parse(localStorage.getItem("formData") || "{}");
+    const form = document.querySelector(".order-form");
+
+    if (!form) return;
+
+    Object.keys(saved).forEach(key => {
+      if (form.elements[key]) {
+        form.elements[key].value = saved[key];
+      }
+    });
+
+    localStorage.removeItem("returnFromGDPR"); // 👈 RESET
+  }, 100);
+});
+
+document.getElementById("gdpr-link").addEventListener("click", function(e) {
+  e.preventDefault();
+
+  // 🔥 kľúč — NEULOŽÍ GDPR do history
+  window.location.replace("gdpr.html");
+});
+
+window.addEventListener("popstate", function () {
+  document.getElementById("modal").style.display = "none";
+});
+
+</script>
+
+<div id="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img">
+</div>
 
 </body>
 </html>
