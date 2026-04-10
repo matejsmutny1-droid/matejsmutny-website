@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Look Amazing | Matej Smutný</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
 
   <style>
 
@@ -13,14 +13,50 @@
       margin: 0;
       background: #050505;
       color: white;
-      font-family: 'Inter', sans-serif;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 60px 20px;
     }
+
+    /* 🌫️ BACKGROUND GLOW */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.04), transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.03), transparent 50%);
+      z-index: 0;
+    }
+
+    /* ⭐ STARS */
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      opacity: 0.5;
+      border-radius: 50%;
+      animation: twinkle 4s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity:0.2; transform:scale(1);}
+      50% { opacity:1; transform:scale(1.6);}
+    }
+
+    .star:nth-child(1){top:10%;left:20%;}
+    .star:nth-child(2){top:30%;left:70%;}
+    .star:nth-child(3){top:80%;left:40%;}
+    .star:nth-child(4){top:60%;left:10%;}
+    .star:nth-child(5){top:20%;left:90%;}
+    .star:nth-child(6){top:75%;left:75%;}
+    .star:nth-child(7){top:50%;left:50%;}
 
     /* 🔙 BACK */
     .back {
@@ -31,57 +67,75 @@
       opacity: 0.4;
       text-decoration: none;
       color: white;
+      z-index: 3;
     }
 
     .back:hover {
       opacity: 1;
     }
 
-    /* WRAP */
-    .wrap {
-      max-width: 500px;
+    /* MAIN WRAP */
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     /* TITLE */
     h1 {
-      font-size: 22px;
+      text-align: center;
+      font-size: 18px;
       letter-spacing: 10px;
       font-weight: 400;
-      margin-bottom: 30px;
-      text-transform: uppercase;
+      margin-bottom: 60px;
     }
 
-    /* DATE */
-    .date {
+    /* 🎥 VIDEO */
+    .video {
+      margin-bottom: 80px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transition: 0.4s;
+    }
+
+    .video:hover {
+      transform: translateY(-4px);
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      display: block;
+    }
+
+    /* 🎵 LYRICS */
+    .lyrics {
       font-size: 13px;
-      letter-spacing: 3px;
-      opacity: 0.5;
-      margin-bottom: 40px;
-    }
-
-    /* TEXT */
-    .coming {
-      font-size: 14px;
-      opacity: 0.6;
-      margin-bottom: 50px;
-    }
-
-    /* BUTTON */
-    .btn {
-      display: inline-block;
-      padding: 12px 26px;
-      border: 1px solid white;
-      border-radius: 999px;
-      text-decoration: none;
-      color: white;
-      font-size: 13px;
+      line-height: 2;
       letter-spacing: 2px;
-      transition: 0.3s;
+      white-space: pre-line;
+      opacity: 0.8;
+      text-align: left;
     }
 
-    .btn:hover {
-      background: white;
-      color: black;
+    /* ✨ FADE IN */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .fade:nth-child(2) { animation-delay: 0.2s; }
+    .fade:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
   </style>
@@ -89,23 +143,117 @@
 
 <body>
 
-<a href="index.html#discography" class="back">← discography</a>
+<!-- STARS -->
+<div class="stars">
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+</div>
 
-<div class="wrap">
+<a href="index.html#discography" class="back">← back</a>
 
-  <h1>LOOK AMAZING</h1>
+<div class="wrapper">
 
-  <div class="date">OUT APRIL 10</div>
+  <h1 class="fade">Look Amazing</h1>
 
-  <div class="coming">
-    not out yet  
-    <br><br>
-    wait for it.
+  <!-- 🎥 YOUTUBE (sem si daj svoj link) -->
+<div class="audio-player fade">
+  <audio controls>
+    <source src="audio/look-amazing.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+  <div class="lyrics fade">
+Blue eyes tired
+Lip gloss shining
+Same old problems
+New eyeliner
+
+Screenshot tears
+Deleted later
+Smudged mascara
+Stronger flavor
+Took that hurt
+Turned it major
+Glow like this
+They call it failure
+
+Bad day
+Cute fit
+Heartbreak
+Still lit
+Tell me
+Can you tell it from the way I sway
+Zoom in
+Crop out
+Sad girl
+Show out
+Play it back
+I’m walking like I’m over it (hey)
+
+I’m not okay but I look amazing
+Cry all night then I go parading
+Hands still shake but my hips still swayin’
+I’m not okay but I look amazing
+I’m not okay but I look amazing
+Red eyes bright and my highlight blazin’
+Whole world heavy but I keep on slayin’
+I’m not okay but I look amazing (oh)
+
+I’m not okay but I look amazing
+I’m not okay but I look amazing
+I’m not okay but I look amazing
+Look
+Look
+Look
+Look amazing
+
+Front seat mirror
+Phone light halo
+Blocked that number
+Saved my shadow
+Sad but hotter
+That’s my motto
+Post it
+Pose it
+Then I let go
+
+Bad text
+Good hair
+Love lost
+Blank stare
+Tell me
+Can you see it when I hit replay
+Big hurt
+Small waist
+New clips
+Same face
+Little bit of chaos on a perfect day
+
+I’m not okay but I look amazing
+Cry all night then I go parading
+Hands still shake but my hips still swayin’
+I’m not okay but I look amazing
+I’m not okay but I look amazing
+Red eyes bright and my highlight blazin’
+Whole world heavy but I keep on slayin’
+I’m not okay but I look amazing
+
+I’m not okay but I look amazing
+I’m not okay but I look amazing
+I’m not okay but I look amazing
+Look
+Look
+Look
+Look amazing
+
+
+
   </div>
-
-  <a href="https://blmdi.to/look_amazing" target="_blank" class="btn">
-    pre-save
-  </a>
 
 </div>
 
