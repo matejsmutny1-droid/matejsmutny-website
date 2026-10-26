@@ -15,10 +15,10 @@
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Special+Elite&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261026-cohesion">
 </head>
 
-<body>
+<body class="home-page">
 
 <nav class="navbar">
   <div class="nav-container">
@@ -52,7 +52,7 @@
 
 <!-- BIO -->
 <section id="bio" class="content bio">
-  <h2>Bio</h2>
+  <h2>bio</h2>
 
   <p>
     I’m a Slovak singer songwriter and producer creating atmospheric pop with a focus on emotion and storytelling.
@@ -81,12 +81,12 @@
   <h2 class="section-title">music</h2>
 
   <div class="music-player">
-    <iframe 
+    <iframe
       title="Matej Smutný on Spotify"
       src="https://open.spotify.com/embed/artist/1joIZwZEKLuiS5SAwzOo9q"
-      width="100%" 
-      height="352" 
-      frameborder="0" 
+      width="100%"
+      height="352"
+      frameborder="0"
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy">
     </iframe>
@@ -95,51 +95,49 @@
 </section>
 
 <section id="shows" class="content shows">
-
-  <h2>upcoming shows · 2027</h2>
+  <h2>upcoming shows</h2>
   <div class="shows-list">
-    <div class="show show-upcoming">
-      <div class="show-date"><time datetime="2027-01-20">20.01.</time></div>
-      <div class="show-city">Prague (CZ)<br><small>Café v lese · The Psycho Lovers · support: RODAN</small></div>
+    <div class="show">
+      <time class="show-date" datetime="2026-12-11">11.12.2026</time>
+      <div class="show-info"><div class="show-city">Banská Bystrica (SK)</div><p class="show-description">Christmas Market</p></div>
+
+    </div>
+    <div class="show">
+      <time class="show-date" datetime="2027-01-20">20.01.2027</time>
+      <div class="show-info"><div class="show-city">Prague (CZ)</div><p class="show-description">Café v lese · The Psycho Lovers · support: RODAN</p></div>
       <a class="show-ticket" href="https://www.ticketlive.cz/cs/event/matej-smutny-the-psycho-lovers-praha-20-01-2027">tickets ↗</a>
     </div>
   </div>
-  <h3 class="past-shows-title">past shows · 2026</h3>
-
-  
-  <div class="shows-list">
-
+  <details class="past-shows">
+    <summary>past shows · 2026</summary>
+    <div class="shows-list">
     <div class="show">
-      <div class="show-date">11.04.</div>
-      <div class="show-city">Zagreb (HR)</div>
-      <div class="show-note">busking</div>
-    </div>
+      <time class="show-date" datetime="2026-07-07">07.07.2026</time>
+      <div class="show-info"><div class="show-city">Göteborg (SE)</div><p class="show-description">Private event</p></div>
 
+    </div>
     <div class="show">
-      <div class="show-date">30.05.</div>
-      <div class="show-city">Dúbravy (SK)</div>
-      <div class="show-note">village festival</div>
-    </div>
+      <time class="show-date" datetime="2026-06-10">10.06.2026</time>
+      <div class="show-info"><div class="show-city">Žilina (SK)</div><p class="show-description">Hudba v nás</p></div>
 
+    </div>
     <div class="show">
-      <div class="show-date">10.06.</div>
-      <div class="show-city">Žilina (SK)</div>
-      <div class="show-note">Hudba v nás</div>
-    </div>
+      <time class="show-date" datetime="2026-05-30">30.05.2026</time>
+      <div class="show-info"><div class="show-city">Dúbravy (SK)</div><p class="show-description">Village festival</p></div>
 
+    </div>
     <div class="show">
-      <div class="show-date">07.07.</div>
-      <div class="show-city">Göteborg (SE)</div>
-      <div class="show-note">private event</div>
+      <time class="show-date" datetime="2026-04-11">11.04.2026</time>
+      <div class="show-info"><div class="show-city">Zagreb (HR)</div><p class="show-description">Busking</p></div>
+
     </div>
-
-  </div>
-
+    </div>
+  </details>
 </section>
 
 <!-- DISCOGRAPHY -->
 <section id="discography" class="content">
-  <h2>Discography</h2>
+  <h2>discography</h2>
 
   <!-- ALBUMS -->
   <h3 class="discography-section">albums</h3>

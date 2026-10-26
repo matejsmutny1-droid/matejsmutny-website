@@ -1676,3 +1676,48 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
 @media (min-width: 601px) and (max-width: 700px) {
   .show-upcoming { grid-template-columns: 70px minmax(0, 1fr) 100px; }
 }
+
+/* Homepage: one palette, content width, type scale and spacing system. */
+.home-page { --page-bg: #0b0c0e; --page-text: #eeeae0; --page-muted: #a3a4aa; --page-line: #292b31; background: var(--page-bg); color: var(--page-text); }
+.home-page .nav-container { background: rgba(18,20,24,.94); border: 1px solid var(--page-line); border-radius: 8px; }
+.home-page .nav-links a { opacity: .8; }
+.home-page .nav-links a:hover, .home-page .nav-links .nav-ticket { opacity: 1; }
+.home-page .concert-hero { background: var(--page-bg); color: var(--page-text); padding-bottom: 64px; }
+.home-page .concert-poster { max-width: 760px; }
+.home-page .concert-name, .home-page .concert-band, .home-page .concert-location { font-family: 'IBM Plex Mono', monospace; font-weight: 400; letter-spacing: -1px; }
+.home-page .concert-name { font-size: clamp(36px, 6vw, 64px); }
+.home-page .concert-band { font-size: clamp(20px, 3vw, 28px); }
+.home-page .concert-eyebrow, .home-page .concert-support, .home-page .concert-caption { color: var(--page-muted); }
+.home-page .concert-location { font-size: clamp(18px, 2.5vw, 25px); }
+.home-page .concert-photo { border-radius: 6px; }
+.home-page .concert-details { color: var(--page-muted); }
+.home-page .ticket-button { background: #3454e8; border-radius: 6px; }
+.home-page .ticket-button:hover { background: #4565f5; }
+.home-page .content { width: 100%; max-width: 808px; padding: 72px 24px; }
+.home-page .content + .content { border-top: 1px solid var(--page-line); }
+.home-page .content h2 { font-family: 'IBM Plex Mono', monospace; font-size: 24px; font-weight: 400; letter-spacing: 0; margin: 0 0 36px; }
+.home-page .bio p { font-size: 15px; line-height: 1.85; text-align: left; opacity: 1; color: var(--page-muted); max-width: 640px; margin: 0 auto 20px; }
+.home-page .bio p:last-child { margin-bottom: 0; }
+.home-page .shows-list { gap: 0; margin-top: 0; }
+.home-page .show { grid-template-columns: 120px minmax(0, 1fr) 72px; gap: 20px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--page-line); transform: none; }
+.home-page .show-date { grid-column: auto; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0; opacity: 1; color: var(--page-muted); white-space: nowrap; }
+.home-page .show-info { min-width: 0; }
+.home-page .show-city { font-size: 16px; letter-spacing: 0; line-height: 1.5; text-align: left; }
+.home-page .show-description { font-size: 12px; color: var(--page-muted); line-height: 1.7; margin: 6px 0 0; }
+.home-page .show-ticket { font-size: 12px; text-underline-offset: 5px; white-space: nowrap; }
+.home-page .past-shows { margin-top: 32px; }
+.home-page .past-shows summary { color: var(--page-muted); font-size: 13px; cursor: pointer; padding: 12px 0; }
+.home-page .past-shows summary:hover { color: var(--page-text); }
+.home-page .discography-section { font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--page-muted); font-weight: 400; letter-spacing: 0; margin: 36px 0 24px; text-align: center; }
+.home-page .single img, .home-page .album img { border-radius: 6px !important; }
+.home-page .footer { border-top: 1px solid var(--page-line); padding: 64px 24px; }
+@media (max-width: 600px) {
+  .home-page .content { padding: 52px 20px; }
+  .home-page .content h2 { font-size: 22px; margin-bottom: 28px; }
+  .home-page .show { grid-template-columns: 90px minmax(0, 1fr); gap: 12px; padding: 20px 0; }
+  .home-page .show-date { font-size: 11px; align-self: start; padding-top: 4px; }
+  .home-page .show-city { font-size: 14px; }
+  .home-page .show-description { font-size: 11px; }
+  .home-page .show-ticket { grid-column: 2; justify-self: start; margin-top: 2px; }
+  .home-page .concert-hero { padding-bottom: 44px; }
+}
