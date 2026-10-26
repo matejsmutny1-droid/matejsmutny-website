@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-<loc>https://matejsmutny.com/</loc>
-</url>
-
-<url>
-<loc>https://matejsmutny.com/singles-en.html</loc>
-</url>
-
-<url>
-<loc>https://matejsmutny.com/singles-sk.html</loc>
-</url>
-
-<url>
-<loc>https://matejsmutny.com/merch.html</loc>
-</url>
-
+  <url><loc>https://matejsmutny.com/</loc></url>
+  <url><loc>https://matejsmutny.com/aura.html</loc></url>
+  <url><loc>https://matejsmutny.com/by-my-side.html</loc></url>
+  <url><loc>https://matejsmutny.com/bye-bye-arena.html</loc></url>
+  <url><loc>https://matejsmutny.com/daj-mi-este-den.html</loc></url>
+  <url><loc>https://matejsmutny.com/dance-dance.html</loc></url>
+  <url><loc>https://matejsmutny.com/dragonfly.html</loc></url>
+  <url><loc>https://matejsmutny.com/elixir.html</loc></url>
+  <url><loc>https://matejsmutny.com/fairytale.html</loc></url>
+  <url><loc>https://matejsmutny.com/fly-no-more.html</loc></url>
+  <url><loc>https://matejsmutny.com/friends.html</loc></url>
+  <url><loc>https://matejsmutny.com/gdpr.html</loc></url>
+  <url><loc>https://matejsmutny.com/heal-you-up.html</loc></url>
+  <url><loc>https://matejsmutny.com/in-my-head.html</loc></url>
+  <url><loc>https://matejsmutny.com/iwannakeepudancin.html</loc></url>
+  <url><loc>https://matejsmutny.com/kitchen-dance.html</loc></url>
+  <url><loc>https://matejsmutny.com/look-amazing.html</loc></url>
+  <url><loc>https://matejsmutny.com/magentic-clouds.html</loc></url>
+  <url><loc>https://matejsmutny.com/merch.html</loc></url>
+  <url><loc>https://matejsmutny.com/nech-zdobi-nas.html</loc></url>
+  <url><loc>https://matejsmutny.com/piuko.html</loc></url>
+  <url><loc>https://matejsmutny.com/psycho-love.html</loc></url>
+  <url><loc>https://matejsmutny.com/santa-claus.html</loc></url>
+  <url><loc>https://matejsmutny.com/scrolling-in-the-night.html</loc></url>
+  <url><loc>https://matejsmutny.com/singles-en.html</loc></url>
+  <url><loc>https://matejsmutny.com/singles-sk.html</loc></url>
+  <url><loc>https://matejsmutny.com/sister.html</loc></url>
+  <url><loc>https://matejsmutny.com/somebody.html</loc></url>
+  <url><loc>https://matejsmutny.com/van-stories.html</loc></url>
+  <url><loc>https://matejsmutny.com/we-dont-cry.html</loc></url>
+  <url><loc>https://matejsmutny.com/we-go-wrong.html</loc></url>
+  <url><loc>https://matejsmutny.com/words-u-say.html</loc></url>
+  <url><loc>https://matejsmutny.com/zazrak.html</loc></url>
 </urlset>

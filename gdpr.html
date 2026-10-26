@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -67,7 +68,7 @@ p {
 <body>
 
 <div class="nav">
-  <a href="#" onclick="goBack()">← back</a>
+  <a href="merch.html">← back</a>
 </div>
 
 <div class="container">
@@ -125,18 +126,7 @@ hello@matejsmutny.com
 
 </div>
 
-<script>
-function goBack() {
-  window.location.replace("merch.html");
-}
 
-// 🔥 zabráni návratu na GDPR cez browser back
-history.replaceState(null, "", "merch.html");
-
-window.addEventListener("popstate", function () {
-  window.location.replace("merch.html");
-});
-</script>
 
 </body>
 </html>

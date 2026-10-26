@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matej Smutný</title>
+  <title>Matej Smutný | Praha · Café v lese · 20. 1. 2027</title>
+  <meta name="description" content="Matej Smutny &amp; The Psycho Lovers live in Prague. Café v lese, 20 January 2027. Support: RODAN. Tickets on TicketLIVE. Music, shows and official merch.">
+  <meta property="og:title" content="Matej Smutny &amp; The Psycho Lovers · Praha 2027">
+  <meta property="og:description" content="20. 1. 2027 · Café v lese · Support: RODAN. Vstupenky v sieti TicketLIVE.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://matejsmutny.com/">
+  <meta property="og:image" content="https://matejsmutny.com/images/praha-2027-wide.jpg">
+  <link rel="canonical" href="https://matejsmutny.com/">
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Special+Elite&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -16,6 +23,7 @@
 <nav class="navbar">
   <div class="nav-container">
 <div class="nav-links">
+  <a href="#praha" class="nav-ticket">Praha 2027</a>
   <a href="#bio">bio</a>
   <a href="#music">music</a>
   <a href="#shows">shows</a>
@@ -25,17 +33,20 @@
   </div>
 </nav>
 
-<header>
-  
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-    <h1>matej smutny</h1>
-  </div>
+<main>
+<section id="praha" class="concert-hero" aria-labelledby="concert-title" lang="sk">
+  <p class="concert-eyebrow">jeden večer · celá kapela · Praha</p>
+  <h1 id="concert-title" class="sr-only">Matej Smutny &amp; The Psycho Lovers — Praha 2027</h1>
+  <a class="concert-poster" href="https://www.ticketlive.cz/cs/event/matej-smutny-the-psycho-lovers-praha-20-01-2027" aria-label="Kúpiť vstupenky na koncert v Prahe cez TicketLIVE">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/praha-2027-square.jpg" width="1200" height="1200">
+      <img src="images/praha-2027-wide.jpg" width="1200" height="628" fetchpriority="high" alt="Matej Smutny &amp; The Psycho Lovers. Praha, Café v lese, 20. 01. 2027. Full band. Support: RODAN.">
+    </picture>
+  </a>
+  <p class="concert-details"><time datetime="2027-01-20T19:00:00+01:00">20. 1. 2027 · 19:00</time><span aria-hidden="true"> / </span>Café v lese, Praha</p>
+  <a class="ticket-button" href="https://www.ticketlive.cz/cs/event/matej-smutny-the-psycho-lovers-praha-20-01-2027">Kúpiť vstupenky <span aria-hidden="true">↗</span></a>
+  <p class="concert-caption">Vstupenky v sieti TicketLIVE</p>
+  <p class="concert-invitation">Nech nám je tam spolu dobre.</p>
 </section>
 
 <!-- BIO -->
@@ -70,6 +81,7 @@
 
   <div class="music-player">
     <iframe 
+      title="Matej Smutný on Spotify"
       src="https://open.spotify.com/embed/artist/1joIZwZEKLuiS5SAwzOo9q"
       width="100%" 
       height="352" 
@@ -83,7 +95,15 @@
 
 <section id="shows" class="content shows">
 
-  <h2>shows 2026</h2>
+  <h2>upcoming shows</h2>
+  <div class="shows-list">
+    <div class="show show-upcoming">
+      <div class="show-date"><time datetime="2027-01-20">20.01.2027</time></div>
+      <div class="show-city">Praha (CZ)<br><small>Café v lese · The Psycho Lovers · support: RODAN</small></div>
+      <a class="show-ticket" href="https://www.ticketlive.cz/cs/event/matej-smutny-the-psycho-lovers-praha-20-01-2027">tickets ↗</a>
+    </div>
+  </div>
+  <h3 class="past-shows-title">past shows · 2026</h3>
 
   
   <div class="shows-list">
@@ -125,12 +145,12 @@
   <div class="discography-grid">
 
     <a href="van-stories.html" class="album">
-      <img src="./images/vanstories.jpg">
+      <img src="./images/vanstories.jpg" alt="Van Stories cover">
       <div class="album-name">Van Stories</div>
     </a>
 
     <a href="aura.html" class="album">
-      <img src="./images/aura.jpg">
+      <img src="./images/aura.jpg" alt="Aura cover">
       <div class="album-name">Aura</div>
     </a>
 
@@ -142,73 +162,73 @@
 <div class="singles-grid">
 
   <a href="psycho-love.html" class="single">
-    <img src="./images/psycholove.jpg">
+    <img src="./images/psycholove.jpg" alt="Psycho Love cover">
     <div class="single-name">Psycho Love</div>
     <div class="single-year">2020</div>
   </a>
 
     <a href="fairytale.html" class="single">
-    <img src="./images/fairytalee.jpg">
+    <img src="./images/fairytalee.jpg" alt="Fairytale cover">
     <div class="single-name">Fairytale</div>
     <div class="single-year">2021</div>
   </a>
 
       <a href="elixir.html" class="single">
-    <img src="./images/elixir.jpg">
+    <img src="./images/elixir.jpg" alt="Elixir cover">
     <div class="single-name">Elixir</div>
     <div class="single-year">2021</div>
   </a>
 
       <a href="words-u-say.html" class="single">
-    <img src="./images/words.jpg">
+    <img src="./images/words.jpg" alt="Words U Say cover">
     <div class="single-name">Words U Say</div>
     <div class="single-year">2022</div>
   </a>
 
       <a href="magentic-clouds.html" class="single">
-    <img src="./images/magenticclouds.jpg">
+    <img src="./images/magenticclouds.jpg" alt="Magentic Clouds cover">
     <div class="single-name">Magentic Clouds</div>
     <div class="single-year">2022</div>
   </a>
 
   <a href="dance-dance.html" class="single">
-    <img src="./images/dance.jpg">
+    <img src="./images/dance.jpg" alt="Dance Dance cover">
     <div class="single-name">Dance Dance</div>
     <div class="single-year">2023</div>
   </a>
 
   <a href="we-go-wrong.html" class="single">
-    <img src="./images/wegowrong.jpg">
+    <img src="./images/wegowrong.jpg" alt="We Go Wrong cover">
     <div class="single-name">We Go Wrong</div>
     <div class="single-year">2024</div>
   </a>
 
   <a href="dragonfly.html" class="single">
-    <img src="./images/dragonfly.jpg">
+    <img src="./images/dragonfly.jpg" alt="Dragonfly cover">
     <div class="single-name">Dragonfly</div>
     <div class="single-year">2024</div>
   </a>
 
   <a href="bye-bye-arena.html" class="single">
-    <img src="./images/arena.jpg">
+    <img src="./images/arena.jpg" alt="Bye Bye Arena cover">
     <div class="single-name">Bye Bye Arena</div>
     <div class="single-year">2024</div>
   </a>
 
   <a href="iwannakeepudancin.html" class="single">
-    <img src="./images/dancin.jpg">
+    <img src="./images/dancin.jpg" alt="I Wanna Keep U Dancin' cover">
     <div class="single-name">I Wanna Keep U Dancin'</div>
     <div class="single-year">2025</div>
   </a>
 
   <a href="santa-claus.html" class="single">
-    <img src="./images/santa.jpg">
+    <img src="./images/santa.jpg" alt="Santa Claus cover">
     <div class="single-name">Santa Claus</div>
     <div class="single-year">2025</div>
   </a>
 
   <a href="look-amazing.html" class="single">
-    <img src="./images/lookamazing.jpg">
+    <img src="./images/lookamazing.jpg" alt="Look Amazing cover">
     <div class="single-name">Look Amazing</div>
     <div class="single-year">2026</div>
   </a>
@@ -221,25 +241,25 @@
 <div class="singles-grid">
 
   <a href="zazrak.html" class="single">
-    <img src="./images/zazrak.jpg">
+    <img src="./images/zazrak.jpg" alt="Zázrak cover">
     <div class="single-name">Zázrak</div>
     <div class="single-year">2024</div>
   </a>
 
   <a href="daj-mi-este-den.html" class="single">
-    <img src="./images/den.jpg">
+    <img src="./images/den.jpg" alt="Daj mi ešte deň cover">
     <div class="single-name">Daj mi ešte deň</div>
     <div class="single-year">2025</div>
   </a>
 
   <a href="piuko.html" class="single">
-    <img src="./images/piuko.jpg">
+    <img src="./images/piuko.jpg" alt="P I U K O cover">
     <div class="single-name">P I U K O</div>
     <div class="single-year">2025</div>
   </a>
 
   <a href="nech-zdobi-nas.html" class="single">
-    <img src="./images/vianoce.jpg">
+    <img src="./images/vianoce.jpg" alt="Nech Zdobí Nás cover">
     <div class="single-name">Nech Zdobí Nás</div>
     <div class="single-year">2025</div>
   </a>
@@ -253,16 +273,16 @@
   <!-- SOCIALS -->
   <div class="social-icons">
 
-    <a href="https://www.instagram.com/matej_smutnee/" target="_blank">
-      <img src="images/instagram.svg">
+    <a href="https://www.instagram.com/matej_smutnee/" target="_blank" rel="noopener noreferrer">
+      <img src="images/instagram.svg" alt="instagram">
     </a>
 
-    <a href="https://www.tiktok.com/@matej_smutnee" target="_blank">
-      <img src="images/tiktok.svg">
+    <a href="https://www.tiktok.com/@matej_smutnee" target="_blank" rel="noopener noreferrer">
+      <img src="images/tiktok.svg" alt="tiktok">
     </a>
 
-    <a href="https://open.spotify.com/artist/1joIZwZEKLuiS5SAwzOo9q" target="_blank">
-      <img src="images/spotify.svg">
+    <a href="https://open.spotify.com/artist/1joIZwZEKLuiS5SAwzOo9q" target="_blank" rel="noopener noreferrer">
+      <img src="images/spotify.svg" alt="spotify">
     </a>
 
   </div>
@@ -278,29 +298,7 @@
 
 </section>
 
-<!-- JS -->
-<script>
-  document.querySelectorAll(".album-card").forEach(card => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("active");
-    });
-  });
-</script>
-
-<script id="7k3f92">
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-  let currentScroll = window.scrollY;
-
-  if (currentScroll > 100) {
-    navbar.classList.add('hidden');
-  } else {
-    navbar.classList.remove('hidden');
-  }
-});
-</script>
+</main>
 
 </body>
 </html>
