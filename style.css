@@ -1628,7 +1628,7 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
 .concert-invitation { font-size: 15px; margin: 32px 0 0; }
 .nav-links .nav-ticket { opacity: 1; }
 .past-shows-title { text-align: center; margin: 60px 0 24px; font-size: 14px; font-weight: 400; color: #aaa; }
-.show-upcoming { grid-template-columns: 110px minmax(0, 1fr) 80px; }
+.show-upcoming { grid-template-columns: 100px minmax(0, 1fr) 160px; }
 .show-city small { display: block; font-size: 11px; font-weight: 400; line-height: 1.7; margin-top: 8px; }
 .show-ticket { color: #fff; font-size: 13px; text-align: right; }
 .navbar .back-button { position: static; display: block; color: white; text-decoration: none; padding: 14px 20px; background: #111; border-radius: 30px; }
@@ -1650,4 +1650,29 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
+}
+
+/* Live text keeps the campaign language consistent and readable at every size. */
+.concert-poster { color: inherit; text-decoration: none; }
+.concert-name, .concert-band, .concert-location {
+  font-family: Impact, 'Arial Narrow', sans-serif;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-transform: none;
+}
+.concert-name { font-size: clamp(44px, 6vw, 80px); line-height: 1.05; margin: 28px 0 16px; }
+.concert-band { font-size: clamp(24px, 3vw, 36px); margin: 0 0 22px; }
+.concert-support { font-size: 16px; margin: 0 0 30px; }
+.concert-poster .concert-photo { width: 100%; height: 180px; object-fit: cover; object-position: 50% 43%; filter: grayscale(1); }
+.concert-location { font-size: clamp(21px, 3vw, 32px); letter-spacing: 0; margin: 24px 0 16px; }
+.concert-format { font-size: 14px; margin: 0; }
+.show-upcoming .show-city { min-width: 0; }
+@media (max-width: 600px) {
+  .concert-name { margin-top: 22px; }
+  .concert-support { font-size: 12px; margin-bottom: 24px; }
+  .concert-poster .concert-photo { height: 220px; object-position: 50% 43%; }
+  .concert-location { max-width: 280px; margin: 22px auto 14px; line-height: 1.4; }
+}
+@media (min-width: 601px) and (max-width: 700px) {
+  .show-upcoming { grid-template-columns: 70px minmax(0, 1fr) 100px; }
 }
